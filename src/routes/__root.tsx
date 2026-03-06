@@ -7,6 +7,7 @@ import {
 } from "@tanstack/react-router";
 import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
 import * as React from "react";
+import { useState, useRef, useEffect } from "react";
 import { DefaultCatchBoundary } from "~/components/DefaultCatchBoundary";
 import { NotFound } from "~/components/NotFound";
 import appCss from "~/styles/app.css?url";
@@ -41,7 +42,7 @@ export const Route = createRootRoute({
       },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap",
       },
       {
         rel: "icon",
@@ -54,6 +55,7 @@ export const Route = createRootRoute({
       {
         src: "/customScript.js",
         type: "text/javascript",
+        defer: true,
       },
     ],
   }),
@@ -63,6 +65,19 @@ export const Route = createRootRoute({
 });
 
 function RootDocument({ children }: { children: React.ReactNode }) {
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setDropdownOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
   return (
     <html lang="en" className="dark">
       <head>
@@ -104,6 +119,43 @@ function RootDocument({ children }: { children: React.ReactNode }) {
               </div>
             </Link>
             <div className="flex items-center gap-6">
+              {/* Demo 2026 dropdown */}
+              <div className="relative" ref={dropdownRef}>
+                <button
+                  type="button"
+                  onClick={() => setDropdownOpen((o) => !o)}
+                  className="text-white/80 hover:text-white text-sm font-medium transition-colors flex items-center gap-1.5 py-2 cursor-pointer"
+                >
+                  Demo 2026
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div
+                  className={`absolute top-full left-0 pt-2 transition-all duration-200 ${
+                    dropdownOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
+                  }`}
+                >
+                  <div className="glass rounded-lg py-1 min-w-[200px] shadow-xl">
+                    <a
+                      href="https://macremotecontroller.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block px-4 py-2.5 text-sm text-white/80 hover:text-white hover:bg-white/5 transition-colors"
+                    >
+                      Mac Remote Controller
+                    </a>
+                    <a
+                      href="https://casechronicles.dk"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block px-4 py-2.5 text-sm text-white/80 hover:text-white hover:bg-white/5 transition-colors"
+                    >
+                      Case Chronicles
+                    </a>
+                  </div>
+                </div>
+              </div>
               <a href="/#contact" className="btn-primary text-white text-sm">
                 Start Your Project
               </a>
@@ -113,7 +165,9 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 
         <main className="relative z-10 pt-16">{children}</main>
 
-        <TanStackRouterDevtools position="bottom-right" />
+        {import.meta.env.DEV && (
+          <TanStackRouterDevtools position="bottom-right" />
+        )}
         <Scripts />
       </body>
     </html>

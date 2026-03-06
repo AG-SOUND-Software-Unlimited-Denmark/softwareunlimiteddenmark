@@ -119,4 +119,10 @@
   .nebula-pulse {
     animation: nebula-pulse 8s ease-in-out infinite;
   }
+  @media (prefers-reduced-motion: reduce) {
+    .nebula-pulse {
+      animation: none;
+      opacity: 0.5;
+    }
+  }
 }

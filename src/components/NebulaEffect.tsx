@@ -7,7 +7,8 @@ import * as React from 'react'
 export function NebulaEffect() {
   return (
     <div
-      className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[min(100vw,900px)] h-[min(100vw,900px)] pointer-events-none overflow-visible"
+      className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[min(100vw,900px)] h-[min(100vw,900px)] pointer-events-none overflow-visible isolate"
+      style={{ contain: "layout paint" }}
       aria-hidden
     >
       <svg
