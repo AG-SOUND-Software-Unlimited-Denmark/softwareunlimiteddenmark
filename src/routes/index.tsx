@@ -206,9 +206,17 @@ function Home() {
               Software Unlimited Denmark
             </span>
           </div>
-          <p className="text-white/40 text-sm">
-            © {new Date().getFullYear()} AG-SOUND. All rights reserved.
-          </p>
+          <div className="flex flex-col items-center md:items-end gap-2">
+            <a
+              href="/careers"
+              className="text-white/60 hover:text-white text-sm transition-colors"
+            >
+              Careers
+            </a>
+            <p className="text-white/40 text-sm">
+              © {new Date().getFullYear()} AG-SOUND. All rights reserved.
+            </p>
+          </div>
         </div>
       </footer>
     </div>

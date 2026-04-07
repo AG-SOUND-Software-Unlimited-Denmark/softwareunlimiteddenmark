@@ -12,8 +12,10 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as UsersRouteImport } from './routes/users'
 import { Route as RedirectRouteImport } from './routes/redirect'
 import { Route as PostsRouteImport } from './routes/posts'
+import { Route as InternshipRouteImport } from './routes/internship'
 import { Route as DeferredRouteImport } from './routes/deferred'
 import { Route as CustomScriptDotjsRouteImport } from './routes/customScript[.]js'
+import { Route as CareersRouteImport } from './routes/careers'
 import { Route as PathlessLayoutRouteImport } from './routes/_pathlessLayout'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as UsersIndexRouteImport } from './routes/users.index'
@@ -42,6 +44,11 @@ const PostsRoute = PostsRouteImport.update({
   path: '/posts',
   getParentRoute: () => rootRouteImport,
 } as any)
+const InternshipRoute = InternshipRouteImport.update({
+  id: '/internship',
+  path: '/internship',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const DeferredRoute = DeferredRouteImport.update({
   id: '/deferred',
   path: '/deferred',
@@ -50,6 +57,11 @@ const DeferredRoute = DeferredRouteImport.update({
 const CustomScriptDotjsRoute = CustomScriptDotjsRouteImport.update({
   id: '/customScript.js',
   path: '/customScript.js',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CareersRoute = CareersRouteImport.update({
+  id: '/careers',
+  path: '/careers',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PathlessLayoutRoute = PathlessLayoutRouteImport.update({
@@ -116,8 +128,10 @@ const PathlessLayoutNestedLayoutRouteARoute =
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/careers': typeof CareersRoute
   '/customScript.js': typeof CustomScriptDotjsRoute
   '/deferred': typeof DeferredRoute
+  '/internship': typeof InternshipRoute
   '/posts': typeof PostsRouteWithChildren
   '/redirect': typeof RedirectRoute
   '/users': typeof UsersRouteWithChildren
@@ -133,8 +147,10 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/careers': typeof CareersRoute
   '/customScript.js': typeof CustomScriptDotjsRoute
   '/deferred': typeof DeferredRoute
+  '/internship': typeof InternshipRoute
   '/redirect': typeof RedirectRoute
   '/api/users': typeof ApiUsersRouteWithChildren
   '/posts/$postId': typeof PostsPostIdRoute
@@ -150,8 +166,10 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/_pathlessLayout': typeof PathlessLayoutRouteWithChildren
+  '/careers': typeof CareersRoute
   '/customScript.js': typeof CustomScriptDotjsRoute
   '/deferred': typeof DeferredRoute
+  '/internship': typeof InternshipRoute
   '/posts': typeof PostsRouteWithChildren
   '/redirect': typeof RedirectRoute
   '/users': typeof UsersRouteWithChildren
@@ -170,8 +188,10 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/careers'
     | '/customScript.js'
     | '/deferred'
+    | '/internship'
     | '/posts'
     | '/redirect'
     | '/users'
@@ -187,8 +207,10 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/careers'
     | '/customScript.js'
     | '/deferred'
+    | '/internship'
     | '/redirect'
     | '/api/users'
     | '/posts/$postId'
@@ -203,8 +225,10 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/_pathlessLayout'
+    | '/careers'
     | '/customScript.js'
     | '/deferred'
+    | '/internship'
     | '/posts'
     | '/redirect'
     | '/users'
@@ -223,8 +247,10 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   PathlessLayoutRoute: typeof PathlessLayoutRouteWithChildren
+  CareersRoute: typeof CareersRoute
   CustomScriptDotjsRoute: typeof CustomScriptDotjsRoute
   DeferredRoute: typeof DeferredRoute
+  InternshipRoute: typeof InternshipRoute
   PostsRoute: typeof PostsRouteWithChildren
   RedirectRoute: typeof RedirectRoute
   UsersRoute: typeof UsersRouteWithChildren
@@ -255,6 +281,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PostsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/internship': {
+      id: '/internship'
+      path: '/internship'
+      fullPath: '/internship'
+      preLoaderRoute: typeof InternshipRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/deferred': {
       id: '/deferred'
       path: '/deferred'
@@ -267,6 +300,13 @@ declare module '@tanstack/react-router' {
       path: '/customScript.js'
       fullPath: '/customScript.js'
       preLoaderRoute: typeof CustomScriptDotjsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/careers': {
+      id: '/careers'
+      path: '/careers'
+      fullPath: '/careers'
+      preLoaderRoute: typeof CareersRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/_pathlessLayout': {
@@ -425,8 +465,10 @@ const ApiUsersRouteWithChildren = ApiUsersRoute._addFileChildren(
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   PathlessLayoutRoute: PathlessLayoutRouteWithChildren,
+  CareersRoute: CareersRoute,
   CustomScriptDotjsRoute: CustomScriptDotjsRoute,
   DeferredRoute: DeferredRoute,
+  InternshipRoute: InternshipRoute,
   PostsRoute: PostsRouteWithChildren,
   RedirectRoute: RedirectRoute,
   UsersRoute: UsersRouteWithChildren,
