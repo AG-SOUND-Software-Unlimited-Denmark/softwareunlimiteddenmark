@@ -42,8 +42,13 @@ function InternshipPage() {
         <h2 className="text-xl font-semibold mb-4">Who you are</h2>
         <ul className="list-disc pl-6 space-y-2 text-white/80 mb-8">
           <li>
-            Student (Marketing, Strategy, Digital Business, International
-            Business or similar)
+            Final-year Bachelor (BA/BSc) or Master (MSc) student in Marketing,
+            Strategy, Digital Business, International Business, or a related
+            field
+          </li>
+          <li>
+            Recent graduates are also welcome to apply (preferably graduated
+            within the last 12 months)
           </li>
           <li>Strong communication skills in Danish and English</li>
           <li>Proactive and comfortable taking initiative</li>
@@ -95,6 +100,13 @@ function InternshipPage() {
           <p>
             <span className="font-medium text-white/90">Selection process:</span>{" "}
             CV + short motivation note, followed by a short online conversation
+          </p>
+          <p>
+            <span className="font-medium text-white/90">
+              Academic confirmation:
+            </span>{" "}
+            Candidates should be able to provide confirmation from their
+            educational institution if needed
           </p>
           <p>
             <span className="font-medium text-white/90">Response timeline:</span>{" "}
