@@ -47,8 +47,10 @@ function InternshipPage() {
             field
           </li>
           <li>
-            Recent graduates are also welcome to apply (preferably graduated
-            within the last 12 months)
+            Currently enrolled at a university or business academy, where this
+            internship can be recognized as part of your academic program
+            (e.g., internship semester, practical training, or ECTS-related
+            project)
           </li>
           <li>Strong communication skills in Danish and English</li>
           <li>Proactive and comfortable taking initiative</li>
