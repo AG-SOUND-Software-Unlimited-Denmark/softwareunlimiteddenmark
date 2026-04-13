@@ -29,7 +29,10 @@ function InternshipPage() {
           <li>Defining and executing marketing campaigns</li>
           <li>Identifying collaboration partners and growth opportunities</li>
           <li>Creating PR materials and brand communication assets</li>
-          <li>Building outbound strategies and defining high-value ICPs</li>
+          <li>
+            Building outbound strategies and defining high-value Ideal Customer
+            Profiles (ICPs)
+          </li>
           <li>Structuring B2B partnerships and collaboration pipelines</li>
           <li>Designing and running growth experiments</li>
           <li>Testing acquisition channels and analyzing performance</li>
@@ -68,17 +71,40 @@ function InternshipPage() {
             <span className="font-medium text-white/90">Location:</span> Remote
           </p>
           <p>
+            <span className="font-medium text-white/90">Start date:</span>{" "}
+            Ongoing intake (start as soon as possible)
+          </p>
+          <p>
             <span className="font-medium text-white/90">Duration:</span> 3-6
             months (flexible)
+          </p>
+          <p>
+            <span className="font-medium text-white/90">Workload:</span> 10-15
+            hours per week (flexible)
           </p>
           <p>
             <span className="font-medium text-white/90">Compensation:</span>{" "}
             Unpaid internship
           </p>
+          <p>
+            <span className="font-medium text-white/90">
+              Application deadline:
+            </span>{" "}
+            Rolling applications (we review continuously)
+          </p>
+          <p>
+            <span className="font-medium text-white/90">Selection process:</span>{" "}
+            CV + short motivation note, followed by a short online conversation
+          </p>
+          <p>
+            <span className="font-medium text-white/90">Response timeline:</span>{" "}
+            We aim to respond within 5-7 business days
+          </p>
         </div>
 
         <p className="text-white/80 leading-relaxed mt-8">
-          To apply, send your CV and a short note on why you would be a good
+          To apply, please submit your application as soon as possible. Send
+          your CV and a short motivation note explaining why you are a strong
           fit by email to{" "}
           <a
             href="mailto:internship@ag-sound.com"
