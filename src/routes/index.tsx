@@ -89,7 +89,7 @@ function Home() {
           <p className="text-white/60 max-w-2xl mb-12">
             Apps we're showcasing this year. Try them live.
           </p>
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <a
               href="https://macremotecontroller.com"
               target="_blank"
@@ -117,6 +117,23 @@ function Home() {
               </h3>
               <p className="text-white/60 text-sm mb-4">
                 Document and share case studies.
+              </p>
+              <span className="text-sm text-accent font-medium">
+                Visit site →
+              </span>
+            </a>
+            <a
+              href="https://promostudio.netlify.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="glass rounded-2xl p-8 hover:border-white/15 transition-all group block"
+            >
+              <h3 className="text-xl font-semibold mb-2 group-hover:text-white transition-colors">
+                AI Promo Studio
+              </h3>
+              <p className="text-white/60 text-sm mb-4">
+                Create 10-second AI promo videos from one photo—for artists,
+                brands, and social campaigns.
               </p>
               <span className="text-sm text-accent font-medium">
                 Visit site →
