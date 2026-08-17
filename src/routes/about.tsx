@@ -10,7 +10,7 @@ export const Route = createFileRoute("/about")({
         description:
           "Meet the team behind AG-SOUND — Software Unlimited Denmark.",
         keywords:
-          "AG-SOUND, About us, Alejandro Gispert, Mab Erdal, Software Unlimited Denmark",
+          "AG-SOUND, About us, Alejandro Gispert, Mab Ardal, Software Unlimited Denmark",
       }),
     ],
   }),
@@ -46,13 +46,13 @@ function AboutPage() {
             <article className="glass rounded-2xl p-6 md:p-8 text-center">
               <img
                 src="/team/mab.png"
-                alt="Mab Erdal"
+                alt="Mab Ardal"
                 className="w-full aspect-square object-cover object-top rounded-2xl mb-6"
               />
               <p className="text-sm uppercase tracking-widest text-white/50 mb-2">
-                Intern 2026
+                Marketing & Growth Strategy Intern
               </p>
-              <h2 className="text-xl font-semibold">Mab Erdal</h2>
+              <h2 className="text-xl font-semibold">Mab Ardal</h2>
             </article>
           </div>
         </div>
