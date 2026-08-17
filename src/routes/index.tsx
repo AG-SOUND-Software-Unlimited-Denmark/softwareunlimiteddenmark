@@ -225,10 +225,10 @@ function Home() {
           </div>
           <div className="flex flex-col items-center md:items-end gap-2">
             <a
-              href="/careers"
+              href="/about"
               className="text-white/60 hover:text-white text-sm transition-colors"
             >
-              Careers
+              About us
             </a>
             <p className="text-white/40 text-sm">
               © {new Date().getFullYear()} AG-SOUND. All rights reserved.

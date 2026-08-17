@@ -108,7 +108,12 @@ function RootDocument({ children }: { children: React.ReactNode }) {
               <a href="/#showcase" className="text-white/60 hover:text-white text-sm font-medium py-3 px-2 -mx-2 rounded transition-colors">
                 Demo 2026
               </a>
-          
+              <Link
+                to="/about"
+                className="text-white/60 hover:text-white text-sm font-medium py-3 px-2 -mx-2 rounded transition-colors"
+              >
+                About us
+              </Link>
               <a href="/#contact" className="btn-primary text-white text-sm">
                 Start Your Project
               </a>
