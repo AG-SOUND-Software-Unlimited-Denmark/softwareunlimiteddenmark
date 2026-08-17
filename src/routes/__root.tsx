@@ -10,7 +10,6 @@ import * as React from "react";
 import { DefaultCatchBoundary } from "~/components/DefaultCatchBoundary";
 import { NotFound } from "~/components/NotFound";
 import appCss from "~/styles/app.css?url";
-import logoSvg from "~/assets/favicon.svg?url";
 import { seo } from "~/utils/seo";
 
 export const Route = createRootRoute({
@@ -45,8 +44,26 @@ export const Route = createRootRoute({
       },
       {
         rel: "icon",
+        type: "image/png",
+        sizes: "48x48",
+        href: "/favicon-48x48.png?v=3",
+      },
+      {
+        rel: "icon",
+        type: "image/png",
+        sizes: "96x96",
+        href: "/favicon-96x96.png?v=3",
+      },
+      {
+        rel: "icon",
         type: "image/svg+xml",
-        href: "/favicon.svg?v=2",
+        href: "/favicon.svg?v=3",
+      },
+      { rel: "shortcut icon", href: "/favicon.ico?v=3" },
+      {
+        rel: "apple-touch-icon",
+        sizes: "180x180",
+        href: "/apple-touch-icon.png?v=3",
       },
       { rel: "manifest", href: "/site.webmanifest", color: "#0a0a0f" },
     ],
