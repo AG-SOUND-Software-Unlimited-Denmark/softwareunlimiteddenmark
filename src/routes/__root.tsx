@@ -1,7 +1,6 @@
 /// <reference types="vite/client" />
 import {
   HeadContent,
-  Link,
   Scripts,
   createRootRoute,
 } from "@tanstack/react-router";
@@ -9,6 +8,7 @@ import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
 import * as React from "react";
 import { DefaultCatchBoundary } from "~/components/DefaultCatchBoundary";
 import { NotFound } from "~/components/NotFound";
+import { SiteNav } from "~/components/SiteNav";
 import appCss from "~/styles/app.css?url";
 import { seo } from "~/utils/seo";
 
@@ -108,35 +108,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
           />
         </div>
 
-        {/* Navigation - liquid glass style */}
-        <nav className="glass-nav fixed top-0 left-0 right-0 z-50">
-          <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-            <Link to="/" className="flex items-center gap-3 group">
-              <div className="flex flex-col">
-                <span className="text-xl font-semibold tracking-tight text-white/95 group-hover:text-white transition-colors leading-tight">
-                  AG-SOUND
-                </span>
-                <span className="text-xs text-white/50 hidden sm:inline">
-                  Software Unlimited Denmark
-                </span>
-              </div>
-            </Link>
-            <div className="flex items-center gap-4 sm:gap-6">
-              <a href="/#showcase" className="text-white/60 hover:text-white text-sm font-medium py-3 px-2 -mx-2 rounded transition-colors">
-                Demo 2026
-              </a>
-              <Link
-                to="/about"
-                className="text-white/60 hover:text-white text-sm font-medium py-3 px-2 -mx-2 rounded transition-colors"
-              >
-                About us
-              </Link>
-              <a href="/#contact" className="btn-primary text-white text-sm">
-                Start Your Project
-              </a>
-            </div>
-          </div>
-        </nav>
+        <SiteNav />
 
         <main className="relative z-10 pt-16">{children}</main>
 

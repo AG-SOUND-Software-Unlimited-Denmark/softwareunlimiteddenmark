@@ -103,6 +103,10 @@
     transform: translateY(-1px);
   }
 
+  .btn-nav {
+    @apply px-5 py-2.5;
+  }
+
   /* Subtle nebula breathing animation */
   @keyframes nebula-pulse {
     0%,
